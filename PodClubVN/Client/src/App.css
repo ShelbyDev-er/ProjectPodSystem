@@ -3,6 +3,7 @@
 @import url("https://fonts.googleapis.com/css?family=Muli:400,700&display=swap");
 @import url('https://fonts.googleapis.com/css2?family=Lobster&family=Oswald&family=Ubuntu:wght@300;400;500&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Lobster&family=Oswald&family=Ubuntu:wght@300;400;500&display=swap');
+
 :root {
     --orange: rgb(255, 109, 42);
     --black: rgb(28, 30, 32);
@@ -20,6 +21,7 @@
 body {
     background-color: var(--body-background-color) !important;
     font-family: 'Ubuntu', sans-serif;
+    font-weight: lighter;
 }
 
 .content a {
@@ -371,7 +373,7 @@ body {
     font-family: "Roboto", sans-serif;
     filter: hue-rotate(0deg);
     border: 2px solid rgb(26, 26, 26);
-    transition: all 0.1s linear;
+    transition: .3s linear;
     border-radius: 8px;
 }
 
@@ -381,7 +383,8 @@ body {
 .chinh-sach:hover,
 .ban-quyen:hover {
     border: 1px solid transparent;
-    box-shadow: 2px 2px 4px 2px rgba(255, 81, 0, 0.253);
+    box-shadow: 2px 2px 4px 2px rgba(255, 255, 255, 0.048);
+    transform: scale(1.1);
 
 }
 
@@ -394,19 +397,6 @@ body {
     display: block;
 }
 
-.cam-doan:hover span:nth-child(1),
-.tuyen-dung:hover span:nth-child(1),
-.lien-he:hover span:nth-child(1),
-.chinh-sach:hover span:nth-child(1),
-.ban-quyen:hover span:nth-child(1) {
-    filter: hue-rotate(0deg);
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 3px;
-    background: linear-gradient(90deg, transparent, var(--orange));
-    animation: animate1 1s linear infinite;
-}
 /* 
 .cam-doan:hover span:nth-child(2),
 .tuyen-dung:hover span:nth-child(2),
@@ -455,11 +445,14 @@ body {
 @keyframes animate1 {
     0% {
         left: -100%;
-   }
-    50%, 100% {
+    }
+
+    50%,
+    100% {
         left: 100%;
-   }
+    }
 }
+
 /* 
 @keyframes animate2 {
     0% {
@@ -964,37 +957,14 @@ li a:hover {
     font-size: 14px;
     z-index: 2;
     font-size: 2.5rem;
-    transition: .01s .23s ease-out all;
+    transition: .8s ease-out all;
     overflow: hidden;
-}
-
-.Group-trade-n-sell::before {
-    content: '';
-    position: absolute;
-    left: 0;
-    top: 0;
-    height: 100%;
-    width: 55%;
-    background: #202020;
-    z-index: -1;
-    transition: .3s ease-in all;
-}
-
-.Group-trade-n-sell::after {
-    content: '';
-    position: absolute;
-    left: -5%;
-    top: 5%;
-    height: 90%;
-    width: 5%;
-    background: var(--orange);
-    z-index: -1;
-    transition: .4s .02s ease-in all;
 }
 
 .Group-trade-n-sell:hover {
     cursor: pointer;
     background-color: rgba(0, 0, 0, 0.658);
+    transform: scale(1.1);
     color: var(--orange);
 }
 
@@ -1042,7 +1012,7 @@ li a:hover {
     background-color: rgb(36, 36, 36);
 }
 
-.link-to-photo-album:hover .photo-album-bottom  {
+.link-to-photo-album:hover .photo-album-bottom {
     background-color: rgb(36, 36, 36);
 }
 
@@ -1069,7 +1039,7 @@ li a:hover {
     padding: 20px;
 }
 
-.feedback p{
+.feedback p {
     font-size: 2.5rem;
 }
 
@@ -1419,10 +1389,43 @@ li a:hover {
     color: var(--header-text);
 }
 
-.contact {
+.toggle-contact {
     position: fixed;
     bottom: 50px;
     right: 20px;
+    background-color: rgb(0, 0, 0);
+    color: #fff;
+    padding: 20px;
+    border-radius: 50%;
+    margin-top: 20px;
+    transition: .3s;
+    z-index: 300;
+    cursor: pointer;
+}
+
+.toggle-contact:hover {
+    background-color: var(--orange);
+    box-shadow: 2px 2px 4px 2px rgba(0, 0, 0, 0.123);
+    transform: scale(1.1);
+}
+
+.contact {
+    position: fixed;
+    bottom: 60px;
+    right: 31px;
+    height: 0;
+    transition: 1s;
+    overflow: hidden;
+    z-index: 250;
+}
+
+.toggle-contact-active {
+    position: fixed;
+    bottom: 50px;
+    right: 31px;
+    height: 300px;
+    transition: 1s;
+    overflow: hidden;
     z-index: 250;
 }
 
@@ -1443,9 +1446,26 @@ li a:hover {
     transform: scale(1.1);
 }
 
+.toggle-contact-active div {
+    background-color: rgb(0, 0, 0);
+    color: #fff;
+    padding: 10px;
+    padding-top: 12px;
+    border-radius: 50%;
+    margin-top: 20px;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.toggle-contact-active div:hover {
+    background-color: var(--orange);
+    box-shadow: 2px 2px 4px 2px rgba(0, 0, 0, 0.123);
+    transform: scale(1.1);
+}
+
 .nav {
     display: flex;
-    justify-content: space-between;    
+    justify-content: space-between;
     padding: 20px;
     background-color: var(--black);
     color: var(--header-text);
@@ -1592,4 +1612,12 @@ li a:hover {
 .content-modal span {
     padding: 10px;
     padding-bottom: 20px;
+}
+
+.CarouselItem-module_firstRowColumn__9wvOz img {
+    border-radius: 8px;
+}
+
+.CarouselItem-module_darkened__YQrzB img {
+    border-radius: 8px;
 }

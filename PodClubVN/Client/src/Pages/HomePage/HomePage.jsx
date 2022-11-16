@@ -11,9 +11,9 @@ import Contact from '../CommonComponents/Contact'
 export default function HomePage() {
     return (
         <>
-            <Contact/>
+            <Contact />
             <div className="homepage-container">
-                <Header position={"position: 'fixed'"}/>
+                <Header position={"position: 'fixed'"} />
                 <TopSlider />
                 <Container>
                     <a href="https://www.facebook.com/PodClubVN">
@@ -21,7 +21,6 @@ export default function HomePage() {
                             GROUP TRADE - SELL
                         </div>
                     </a>
-                    <div className="line"></div>
                     <ContentCarousel />
                     <div className="line">
                         <div className="text-inline">Always by your side</div>
