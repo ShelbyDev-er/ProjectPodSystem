@@ -35,7 +35,7 @@ a:hover {
     z-index: 100;
     padding: 10px;
     box-shadow: 2px 4px 2px 2px rgba(0, 0, 0, 0.096);
-    height: 222px;
+    height: 150px;
     background-color: #fff;
 }
 
@@ -43,21 +43,31 @@ a:hover {
     display: flex;
     justify-content: space-between;
     font-size: 1.3rem;
-    font-weight: 800;
+    font-weight: 200;
     position: relative;
 }
 
 .header .left,
 .header .right {
+    position: absolute;
     display: flex;
     gap: 20px;
     cursor: pointer;
+    top: 20px;
+}
+
+.header .left {
+    left: 15px;
+}
+
+.header .right {
+    right: 15px;
 }
 
 .header-menu {
     display: flex;
     justify-content: center;
-    gap: 30px;
+    gap: 45px;
     align-items: center;
     list-style: none;
     font-size: 1.3rem;
@@ -65,11 +75,11 @@ a:hover {
 }
 
 .footer .fa-pinterest {
-    transform: translate(-10px, -10px);
+    /* transform: translate(-10px, -10px); */
 }
 
 .footer .fa-instagram {
-    transform: translate(10px, -10px);
+    /* transform: translate(10px, -10px); */
 }
 
 .header-logo {
@@ -77,18 +87,19 @@ a:hover {
 }
 
 .header-menu span a li {
-    margin-top: 20px;
+    margin-top: 24px;
 }
 
 .header-logo img {
-    width: 100px;
+    width: 70px;
 }
 
 .header .header-menu {}
 
 .header-menu li {
     cursor: pointer;
-    font-weight: 800;
+    font-weight: 400;
+    font-size: .8rem;
 }
 
 .header-menu .contact {
@@ -100,7 +111,7 @@ a:hover {
 
 /* SLIDER */
 .slider-container {
-    margin-top: 50px;
+    margin-top: -16px;
 }
 
 .slider-container nav {
@@ -462,7 +473,6 @@ a:hover {
 
 .content-bellow-slider .option div {
     height: auto;
-    background-color: #c4c4c4;
     border-radius: 10px;
     cursor: pointer;
     transition: .3s;
@@ -475,10 +485,11 @@ a:hover {
 
 .content-bellow-slider .gr-trade-n-sell {
     text-align: center;
-    padding: 20px 0;
+    padding: 88px 0;
     font-size: 2rem;
-    background: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRUMmklaIcqVtEC2NJ9S-hJGlXlLIcXdNTfcbx4FijdiwIGOVVUSPGPNvQUT2bHBMuFXw&usqp=CAU);
-    background-size: contain;
+    /* background: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRUMmklaIcqVtEC2NJ9S-hJGlXlLIcXdNTfcbx4FijdiwIGOVVUSPGPNvQUT2bHBMuFXw&usqp=CAU);
+    background-size: contain; */
+    background-color: #D2D2D3;
     border-radius: 10px;
     margin-top: 100px;
     cursor: pointer;
@@ -498,7 +509,7 @@ a:hover {
 }
 
 .feature {
-    background-color: #e6e6e6;
+    background-color: #ffffff;
 }
 
 .photos-album,
@@ -521,7 +532,7 @@ a:hover {
 .photos-album .img {
     margin-top: 24px;
     margin-bottom: 10px;
-    background-color: rgb(182, 182, 182);
+    background-color: rgb(255, 255, 255);
     border-radius: 10px 0 0 10px;
     overflow: hidden;
     cursor: pointer;
@@ -590,8 +601,8 @@ a:hover {
     cursor: pointer;
     overflow: hidden;
     transition: .3s;
+    border: 1px solid #000;
 }
-
 
 .shopify-section .item img {
     width: 100%;
@@ -604,11 +615,17 @@ a:hover {
     transition: .3s;
 }
 
+.shopify-section-title {
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: 600;
+    margin-top: 120px;
+}
+
 .footer {
     background-color: rgb(255, 255, 255);
     font-weight: 800;
 }
-
 
 .footer-menu {
     list-style: none;
@@ -617,6 +634,7 @@ a:hover {
 .footer-logo {
     display: flex;
     justify-content: center;
+    margin: 30px 0;
 }
 
 .footer-logo img {
@@ -627,13 +645,15 @@ a:hover {
 
 .footer-menu li {
     cursor: pointer;
+    font-weight: 400;
+    font-size: .8rem;
 }
 
 .footer .contact {
     cursor: pointer;
     display: flex;
     gap: 10px;
-    font-size: 1.3rem;
+    font-size: 1.5rem;
     justify-content: center;
     margin: 10px 0;
     margin-left: 50%;
@@ -675,14 +695,32 @@ ul {
 }
 
 /* END CONTENT */
+
 /* PRODUCTLIST */
+.menu-container {
+    width: 100%;
+    background-color: rgb(235, 235, 235);
+    border-radius: 5px;
+    transition: .3s;
+    cursor: pointer;
+}
+
+.menu-container:hover {
+    background-color: rgb(212, 212, 212);
+}
+
+.menu-container p {
+    text-align: center;
+}
+
+
 
 /* PRODUCTLIST SLIDER */
 .this-is-carousel {
     background-color: #232323;
     width: 100%;
     height: 300px;
-    margin-top: 226px;
+    margin-top: 155px;
     color: #fff;
     text-align: center;
     padding: 80px;
@@ -690,9 +728,49 @@ ul {
 }
 
 /* END PRODUCTLIST SLIDER */
+.filter-juice-type {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    background-color: #fff;
+}
+
+.menu {
+    padding: 4px;
+    background-color: rgb(255, 145, 0);
+    display: flex;
+}
+
+.filter-juice-type {
+    display: flex;
+    background-color: #ffffff;
+    border-radius: 5px 0px 0px 5px;
+}
+
+.filter-juice-type img {
+    width: 80px;
+}
 
 .products-type-name {
     display: flex;
+}
+
+.filter-by-coldness {
+    background-color: #ffffff;
+    border-radius: 0px 5px 5px 0px;
+}
+
+.filter-by-coldness-option {
+    display: flex;
+}
+
+.filter-by-coldness-option span {
+    width: 200px;
+}
+
+.menu-title {
+    text-align: center;
+    margin: 10px 0;
 }
 
 .product-description {
@@ -780,7 +858,7 @@ ul {
     opacity: 1;
 }
 
-.card:hover .product-img img  {
+.card:hover .product-img img {
     /* transform: scale(1.1); */
     /* transition: .5s; */
 }
@@ -789,9 +867,24 @@ ul {
     0% {
         transform: scale(1.15);
     }
+
     100% {
         transform: scale(1);
     }
 }
 
 /* END PRODUCTLIST */
+
+/* PRODUCT DETAIL */
+.product-detail-content {
+    margin-top: 228px;
+}
+
+/* END PRODUCT DETAIL */
+
+/* INTRODUCE PAGE */
+.introduce-content {
+    margin-top: 228px;
+}
+
+/* END INTRODUCE PAGE */
