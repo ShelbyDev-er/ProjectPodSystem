@@ -3,6 +3,7 @@ const itemCount = items.length;
 const nextItem = document.querySelector('.next');
 const previousItem = document.querySelector('.previous');
 const navItem = document.querySelector('a.toggle-nav');
+import Swiper from 'swiper/bundle';
 
 // HOMEPAGE SLIDER
 let count = 0;
@@ -10,7 +11,7 @@ let count = 0;
 function showNextItem() {
   items[count].classList.remove('active');
 
-  if(count < itemCount - 1) {
+  if (count < itemCount - 1) {
     count++;
   } else {
     count = 0;
@@ -23,7 +24,7 @@ function showNextItem() {
 function showPreviousItem() {
   items[count].classList.remove('active');
 
-  if(count > 0) {
+  if (count > 0) {
     count--;
   } else {
     count = itemCount - 1;
@@ -34,13 +35,13 @@ function showPreviousItem() {
   console.log(count);
 }
 
-function toggleNavigation(){
+function toggleNavigation() {
   this.nextElementSibling.classList.toggle('active');
 }
 
 function keyPress(e) {
   e = e || window.event;
-  
+
   if (e.keyCode == '37') {
     showPreviousItem();
   } else if (e.keyCode == '39') {
@@ -54,11 +55,31 @@ document.addEventListener('keydown', keyPress);
 navItem.addEventListener('click', toggleNavigation);
 // END HOMEPAGE SLIDER
 
-// PRODUCTLIST SLIDER
+// PRODUCT DETAIL SLIDER
+var slideIndex = 1;
+showSlides(slideIndex);
 
-// END PRODUCTLIST SLIDER
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
 
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
 
-// TOGGLE NAV
-
-// END TOGGLE NAV
+function showSlides(n) {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("dot");
+  if (n > slides.length) { slideIndex = 1 }
+  if (n < 1) { slideIndex = slides.length };
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+  for (i = 0; i < dots.length; i++) {
+    dots[i].classList.remove("active");
+  }
+  slides[slideIndex - 1].style.display = "block";
+  dots[slideIndex - 1].classList.add("active");
+}
+// END PRODUCT DETAIL SLIDER
