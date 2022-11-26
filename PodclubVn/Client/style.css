@@ -33,7 +33,7 @@ a:hover {
     top: 0;
     left: 0;
     right: 0;
-    z-index: 100;
+    z-index: 1001;
     padding: 10px;
     box-shadow: 2px 4px 2px 2px rgba(0, 0, 0, 0.096);
     height: 150px;
@@ -54,7 +54,7 @@ a:hover {
     display: flex;
     gap: 20px;
     cursor: pointer;
-    top: 20px;
+    top: 5px;
 }
 
 .header .left {
@@ -112,7 +112,7 @@ a:hover {
 
 /* SLIDER */
 .slider-container {
-    margin-top: -16px;
+    margin-top: 154px;
 }
 
 .slider-container nav {
@@ -606,7 +606,7 @@ a:hover {
     cursor: pointer;
     overflow: hidden;
     transition: .3s;
-    padding: 20px;
+    padding: 15px;
     border-radius: 5px;
 }
 
@@ -670,11 +670,24 @@ a:hover {
 }
 
 @media screen and (max-width: 800px) {
+    .group-item {
+        padding: 0;
+    }
 
     .header-menu li,
     .header-menu .contact {
+        font-size: .6rem !important;
+    }
+
+    .header-menu {
+        gap: 10px;
+    }
+
+    .header .right {
         display: none;
     }
+
+    .header .left {}
 
     .home-page .header-wrapper {
         height: 203px;
@@ -793,6 +806,7 @@ ul {
 .menu-title {
     text-align: center;
     margin: 10px 0;
+    margin-top: 30px;
 }
 
 .product-description {
@@ -1827,11 +1841,9 @@ input.sp-selector-5:checked~.sp-content .sp-slider>li:nth-child(5) {
     text-align: center;
 }
 
-.left-product-info p {
-}
+.left-product-info p {}
 
-.right-product-info p {
-}
+.right-product-info p {}
 
 .product-info-title {
     font-size: 1.3rem;
@@ -1893,4 +1905,5 @@ input.sp-selector-5:checked~.sp-content .sp-slider>li:nth-child(5) {
 .info-detail .info-detail-title {
     font-weight: 800;
 }
+
 /* END INTRODUCE PAGE */
