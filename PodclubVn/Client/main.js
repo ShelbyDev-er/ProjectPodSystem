@@ -3,57 +3,38 @@ const itemCount = items.length;
 const nextItem = document.querySelector('.next');
 const previousItem = document.querySelector('.previous');
 const navItem = document.querySelector('a.toggle-nav');
-import Swiper from 'swiper/bundle';
-
+const menu = document.querySelector('.menu');
+const podMenu = document.querySelector('.pod-menu span');
+const juiceMenu = document.querySelector('.juice-menu span');
+const accessoryMenu = document.querySelector('.accessory-menu span');
+const podOneTimesMenu = document.querySelector('.pod-one-times-menu span');
+const overlay = document.querySelector('.overlay');
+const podOptionsActive = document.querySelector('.pod-options-wrapper')
+const juiceOptionsActive = document.querySelector('.juice-options-wrapper')
+const accessoryOptionsWrapper = document.querySelector('.accessory-options-wrapper')
+const podOneTimesOptionswrapper = document.querySelector('.pod-one-times-options-wrapper')
 // HOMEPAGE SLIDER
-let count = 0;
 
-function showNextItem() {
-  items[count].classList.remove('active');
-
-  if (count < itemCount - 1) {
-    count++;
-  } else {
-    count = 0;
-  }
-
-  items[count].classList.add('active');
-  console.log(count);
-}
-
-function showPreviousItem() {
-  items[count].classList.remove('active');
-
-  if (count > 0) {
-    count--;
-  } else {
-    count = itemCount - 1;
-  }
-
-  items[count].classList.add('active');
-  // Check if working...
-  console.log(count);
-}
-
-function toggleNavigation() {
-  this.nextElementSibling.classList.toggle('active');
-}
-
-function keyPress(e) {
-  e = e || window.event;
-
-  if (e.keyCode == '37') {
-    showPreviousItem();
-  } else if (e.keyCode == '39') {
-    showNextItem();
-  }
-}
-
-nextItem.addEventListener('click', showNextItem);
-previousItem.addEventListener('click', showPreviousItem);
-document.addEventListener('keydown', keyPress);
-navItem.addEventListener('click', toggleNavigation);
 // END HOMEPAGE SLIDER
+
+// TABS
+const tabs = document.querySelectorAll('[data-tab-target]')
+const tabContents = document.querySelectorAll('[data-tab-content]')
+
+tabs.forEach(tab => {
+  tab.addEventListener('click', () => {
+    const target = document.querySelector(tab.dataset.tabTarget)
+    tabContents.forEach(tabContent => {
+      tabContent.classList.remove('active')
+    })
+    tabs.forEach(tab => {
+      tab.classList.remove('active')
+    })
+    tab.classList.add('active')
+    target.classList.add('active')
+  })
+})
+// END TABS
 
 // PRODUCT DETAIL SLIDER
 var slideIndex = 1;
