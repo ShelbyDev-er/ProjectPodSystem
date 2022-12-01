@@ -957,6 +957,9 @@ a:hover {
 }
 
 @media screen and (max-width: 575px) {
+    .footer button {
+        font-size: .8rem;
+    }
 
     .photos-album .img,
     .feedback .img {
@@ -2352,3 +2355,25 @@ input.sp-selector-5:checked~.sp-content .sp-slider>li:nth-child(5) {
 }
 
 /* END INTRODUCE PAGE */
+
+/* BUTTON SCROLLBACK TO TOP */
+.footer {
+    position: relative;
+}
+
+.footer button {
+    position: absolute;
+    bottom: 26px;
+    right: 20px;
+    background-color: #fff;
+    outline: none;
+    border: none;
+    font-size: 2rem;
+    transition: .3s;
+}
+
+.footer button:hover {
+    color: rgb(255, 145, 0);
+}
+
+/* END BUTTON SCROLLBACK TO TOP */
