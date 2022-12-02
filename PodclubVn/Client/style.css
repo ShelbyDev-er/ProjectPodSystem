@@ -607,7 +607,7 @@ a:hover {
 
 .content-bellow-slider .gr-trade-n-sell {
     text-align: center;
-    padding: 88px 0;
+    padding: 80px 0;
     font-size: 2rem;
     /* background: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRUMmklaIcqVtEC2NJ9S-hJGlXlLIcXdNTfcbx4FijdiwIGOVVUSPGPNvQUT2bHBMuFXw&usqp=CAU);
     background-size: contain; */
@@ -669,8 +669,8 @@ a:hover {
 .photos-album .img {
     margin-top: 24px;
     margin-bottom: 10px;
-    background-color: rgb(243 243 243);
-    border-radius: 10px 0 0 10px;
+    background-color: rgb(105, 105, 105);
+    border-radius: 10px;
     overflow: hidden;
     cursor: pointer;
     padding: 0;
@@ -679,8 +679,8 @@ a:hover {
 .feedback .img {
     margin-bottom: 24px;
     margin-top: 10px;
-    background-color: rgb(243 243 243);
-    border-radius: 0 10px 10px 0;
+    background-color: rgb(105, 105, 105);
+    border-radius: 10px;
     overflow: hidden;
     cursor: pointer;
     padding: 0;
@@ -738,8 +738,8 @@ a:hover {
     cursor: pointer;
     overflow: hidden;
     transition: .3s;
-    margin: 5px;
-    border-radius: 5px;
+    /* margin: 5px; */
+    /* border-radius: 5px; */
     background-color: rgb(201, 201, 201);
     position: relative;
 }
@@ -862,13 +862,13 @@ a:hover {
     justify-content: center;
 }
 
-.group-dot {
+.similar-products .group-dot {
     display: flex;
     justify-content: center;
     gap: 10px;
 }
 
-.group-dot .dot {
+.similar-products .group-dot .dot {
     width: 8px;
     height: 8px;
     border-radius: 100%;
@@ -877,8 +877,14 @@ a:hover {
     margin-bottom: 50px;
 }
 
-.group-dot .dot-active {
+.similar-products .group-dot .dot-active {
     background: rgb(255, 145, 0);
+}
+
+@media screen and (max-width: 998px) {
+    .content-bellow-slider .gr-trade-n-sell {
+        padding: 50px 0 !important;
+    }
 }
 
 @media screen and (max-width: 767px) {
@@ -896,11 +902,11 @@ a:hover {
         font-size: .575rem;
     }
 
-    .dp-none {
+    .similar-products .dp-none {
         display: none;
     }
 
-    .group-dot .dot {
+    .similar-products .group-dot .dot {
         display: block;
     }
 }
